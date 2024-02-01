@@ -18,7 +18,8 @@ public class DefaultReferenceResolver implements ReferenceResolver {
         String type=m.group(2);
         String name=m.group(3);
         try {
-            return Integer.parseInt(name, Encoder.Config.defaultReferenceRadix);
+            //return Integer.parseInt(name, Encoder.Config.defaultReferenceRadix);
+            return Integer.parseUnsignedInt(name, Encoder.Config.defaultReferenceRadix);
         }catch (Exception e){
             e.printStackTrace();
         }
